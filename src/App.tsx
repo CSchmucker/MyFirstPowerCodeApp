@@ -96,9 +96,9 @@ export default function App() {
               const erWeekend = i >= 5
               return (
                 <tr key={i} className={erWeekend ? 'weekend' : ''}>
-                  <td className="dag-navn">{DAGE[i]}</td>
-                  <td className="dag-dato">{formatDato(dato)}</td>
-                  <td>
+                  <td className="dag-navn" data-label="Dag">{DAGE[i]}</td>
+                  <td className="dag-dato" data-label="Dato">{formatDato(dato)}</td>
+                  <td data-label="Kode">
                     <select
                       value={dag.kode}
                       onChange={e => opdaterDag(i, 'kode', e.target.value)}
@@ -109,7 +109,7 @@ export default function App() {
                       ))}
                     </select>
                   </td>
-                  <td>
+                  <td data-label="Timer">
                     <input
                       type="number"
                       min="0"

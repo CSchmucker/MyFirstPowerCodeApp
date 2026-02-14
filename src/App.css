@@ -183,3 +183,124 @@ h1 {
 .gem-knap:active {
   background: #a81f1f;
 }
+
+/* ── Responsive / mobil ── */
+@media (max-width: 600px) {
+  .app {
+    margin: 1rem auto;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Navigation: sæt uge-label under knapperne */
+  .uge-navigation {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .uge-label {
+    width: 100%;
+    order: -1;
+    font-size: 0.9rem;
+  }
+
+  .nav-knap {
+    flex: 1;
+    padding: 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  /* Tabel → kort-layout */
+  .time-tabel thead {
+    display: none;
+  }
+
+  .time-tabel tbody tr {
+    display: block;
+    border: 1px solid #e8e8e8;
+    border-radius: 8px;
+    margin: 0.5rem 0.75rem;
+    padding: 0.5rem 0.75rem;
+    background: #fff;
+  }
+
+  .time-tabel tbody tr.weekend {
+    background: #fafafa;
+  }
+
+  .time-tabel td {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.4rem 0;
+    border: none;
+    width: 100%;
+  }
+
+  /* Vis label fra data-label før hvert felt */
+  .time-tabel td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    min-width: 60px;
+  }
+
+  /* Dag-navn: vis dato ved siden af */
+  .time-tabel td.dag-navn {
+    font-size: 1rem;
+    font-weight: 600;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid #f0f0f0;
+    margin-bottom: 0.25rem;
+    color: #1a1a2e;
+  }
+
+  .kode-select {
+    width: auto;
+    flex: 1;
+    min-width: 0;
+    font-size: 0.85rem;
+  }
+
+  .timer-input {
+    width: 70px;
+    font-size: 1rem;
+    padding: 0.5rem 0.6rem;
+  }
+
+  /* Total-række */
+  .time-tabel tfoot tr {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .total-række td {
+    display: inline;
+    padding: 0;
+    background: none;
+    border: none;
+  }
+
+  .tabel-wrapper {
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .tabel-wrapper > table tfoot {
+    display: block;
+    background: #fff;
+    border-radius: 8px;
+    margin: 0.5rem 0.75rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  }
+}
